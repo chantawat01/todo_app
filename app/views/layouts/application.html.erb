@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Add Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+      h1 {
+        color: #ffffff; /* สีขาว */
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 10px 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-family: 'Arial', sans-serif;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(173, 216, 230, 0.5), 0 0 15px rgba(173, 216, 230, 0.7);
+      }
+
+      .text-primary, .text-success, .text-info {
+        background-color: #ffffff; /* สีพื้นของกล่อง */
+        color: #000000; /* สีข้อความเป็นสีดำ */
+        padding: 5px 15px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .text-primary {
+        border: 2px solid rgba(173, 216, 230, 0.5); /* เส้นขอบสีฟ้าอ่อน */
+      }
+
+      .text-success {
+        border: 2px solid rgba(144, 238, 144, 0.5); /* เส้นขอบสีเขียวอ่อน */
+      }
+
+      .text-info {
+        border: 2px solid rgba(0, 191, 255, 0.5); /* เส้นขอบสีฟ้าสดใส */
+      }
+
+      /* น้องหมูเด้ง */
+      .hippo {
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 200px;
+        height: 200px;
+        background-image: url('https://media.giphy.com/media/RLEdq1A9PT0BZo27s3/giphy.gif?cid=82a1493b1kr6yh1etj98pj993olqeli3up1jai5ev8b2m0ri&ep=v1_gifs_trending&rid=giphy.gif&ct=g'); /* ใช้ภาพ GIF ของน้องหมูฮิปโป */
+        background-size: cover;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+
+      /* Style สำหรับ Todo Item */
+      .todo-item {
+        color: #000000; /* สีข้อความเป็นสีดำ */
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        margin-top: 5px;
+        border-radius: 5px;
+      }
+
+      /* เพิ่มสไตล์สำหรับข้อความ pop ใน Incomplete */
+      .incomplete-text {
+        color: #000000 !important; /* เปลี่ยนข้อความเป็นสีดำ */
+      }
+
+      /* เพิ่มสไตล์สำหรับข้อความ pop1 ใน Complete */
+      .complete-text {
+        color: #000000 !important; /* เปลี่ยนข้อความเป็นสีดำ */
+      }
+
+    </style>
+
+    <!-- Additional Head Content -->
+    <%= yield :head %>
+  </head>
+  <body>
+    <%= yield %>
+
+    <!-- น้องหมูเด้ง -->
+    <div class="hippo"></div>
+  </body>
+</html>
+
+
+
+
+

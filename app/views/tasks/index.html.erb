@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Todos</h1>
+
+  <!-- Incomplete Tasks -->
+  <h2 class="text-primary">Incomplete</h2>
+  <ul class="list-group mb-4">
+    <% @incomplete_tasks.each do |task| %>
+      <li class="list-group-item incomplete d-flex justify-content-between align-items-center">
+        <span><%= task.name %></span>
+        <div>
+          <%= link_to 'Complete', complete_task_path(task), method: :patch, class: "btn btn-success btn-sm mr-2" %>
+          <%= link_to 'Edit', edit_task_path(task), class: "btn btn-warning btn-sm mr-2" %>
+          <%= button_to 'Delete', task, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure you want to delete this task?' } %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <!-- Complete Tasks -->
+  <h2 class="text-success">Complete</h2>
+  <ul class="list-group mb-4">
+    <% @complete_tasks.each do |task| %>
+      <li class="list-group-item complete d-flex justify-content-between align-items-center">
+        <span><%= task.name %></span>
+        <%= button_to 'Delete', task, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure you want to delete this task?' } %>
+      </li>
+    <% end %>
+  </ul> 
+
+  <!-- New Task Form -->
+  <h2 class="text-info">New Task</h2>
+  <%= form_for(Task.new, html: { class: 'form-inline justify-content-center' }) do |form| %>
+    <div class="form-group mr-2">
+      <%= form.text_field :name, class: 'form-control', placeholder: "Enter a task" %>
+    </div>
+    <%= form.submit "Create Todo", class: "btn btn-primary" %>
+  <% end %>
+</div>

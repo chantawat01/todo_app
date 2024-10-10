@@ -1,0 +1,64 @@
+/* เพิ่มพื้นหลังแบบไล่สี */
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* ตกแต่งคอนเทนเนอร์ */
+  .container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ตกแต่งหัวข้อ */
+  h1, h2 {
+    text-align: center;
+  }
+  
+  /* ตกแต่งปุ่ม */
+  .btn {
+    border-radius: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #4a90e2;
+    border: none;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+  }
+  
+  /* ตกแต่งรายการ */
+  .list-group-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #090909;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* แยกข้อความในฟังก์ชัน incomplete ให้เป็นสีฟ้าอ่อน */
+  .list-group-item.incomplete {
+    color: #87CEFA; /* ฟ้าอ่อน */
+  }
+  
+  /* แยกข้อความในฟังก์ชัน complete ให้เป็นสีเขียว */
+  .list-group-item.complete {
+    color: #28a745; /* เขียว */
+  }
+  
